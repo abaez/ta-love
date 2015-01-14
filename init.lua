@@ -14,7 +14,7 @@ end
 events.connect(events.LEXER_LOADED, function (lang)
   if lang ~= 'love' then return end
 
-  buffer.tab_width = 4
+  buffer.tab_width = 2
   buffer.use_tabs = false
   buffer.edge_column = 79
 end)
