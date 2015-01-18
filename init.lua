@@ -6,6 +6,7 @@
 
 -- run love2d project
 textadept.run.build_commands["main.lua"] = "love ."
+textadept.editing.comment_string.love = '--'
 
 if type(snippets) == 'table' then
   snippets.love = snippets.lua
