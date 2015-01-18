@@ -10,8 +10,15 @@ function M:new(extend)
   local extend = extend or {}
   setmetatable(extend, self)
   self.__index = self
+  self.load(self)
 
   return extend
+end
+
+--- the prototype constructor.
+-- @param example an example on how to use the constructor.
+function M:load(example)
+  self.example = example
 end
 
 --- forms the canvas of the object.
