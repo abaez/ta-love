@@ -19,4 +19,16 @@ events.connect(events.LEXER_LOADED, function (lang)
   buffer.edge_column = 79
 end)
 
+keys.love = {
+  ['can'] = function()
+    io.open_file(ui.dialogs.filesave{
+      with_directory = (buffer.filename or ''):match('^.+[//]')
+    })
+    buffer:document_start()
+    for line in io.open(_USERHOME .. "/modules/love/template.lua"):lines() do
+      buffer:add_text(line .. "\n")
+    end
+  end
+}
+
 return {}
